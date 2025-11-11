@@ -1,0 +1,6 @@
+Equipo: {{ inventory_hostname }}
+Sistema Operativo: {{ ansible_distribution }} {{ ansible_distribution_version }}
+CPU: {{ ansible_processor[0] }}
+Memoria Total: {{ ansible_memtotal_mb }} MB
+Fecha: {{ ansible_date_time.date }}
+

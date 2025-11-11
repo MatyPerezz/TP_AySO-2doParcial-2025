@@ -1,0 +1,41 @@
+---
+- name: Crear directorios de trabajo
+  file:
+    path: "/tmp/2do_parcial/{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+  loop:
+    - alumno
+    - equipo
+
+- name: Generar datos del alumno
+  template:
+    src: datos_alumno.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Generar datos del equipo
+  template:
+    src: datos_equipo.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Crear grupo 2PSupervisores
+  group:
+    name: 2PSupervisores
+    state: present
+
+- name: Permitir sudo sin contraseña para 2PSupervisores
+  copy:
+    dest: /etc/sudoers.d/2PSupervisores
+    content: "%2PSupervisores ALL=(ALL) NOPASSWD: ALL\n"
+    owner: root
+    group: root
+    mode: '0440'
+

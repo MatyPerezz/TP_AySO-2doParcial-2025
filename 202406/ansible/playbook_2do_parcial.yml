@@ -1,0 +1,8 @@
+---
+- name: Ejecutar configuración del 2do parcial
+  hosts: localhost
+  connection: local
+  become: yes
+
+  roles:
+    - role_2do_parcial

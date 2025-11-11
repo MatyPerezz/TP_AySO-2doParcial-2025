@@ -1,0 +1,53 @@
+    1  pwd
+    2  mkdir repogit
+    3  cd repogit
+    4  git clone --depth=1 https://github.com/upszot/UTN-FRA_SO_Examenes.git
+    5  cd UTN-FRA_SO_Examenes/202406
+    6  chmod +x script_Precondicion.sh
+    7  ./script_Precondicion.sh
+    8  source  ~/.bashrc  && history -a
+    9  source ~/.bashrc
+   10  cd ~
+   11  ls
+   12  sudo fdisk -l
+   13  sudo fdisk /dev/sdc
+   14  sudo journalctl -k | grep -i attached
+   15  exit
+   16  sudo fdisk -l
+   17  exit
+   18  sudo fdisk -l
+   19  sudo fdisk /dev/sdb
+   20  sudo fdisk -l /dev/sdb
+   21  sudo fdisk -l
+   22  sudo fdisk /dev/sdb
+   23  sudo fdisk -l /dev/sdb
+   24  sudo fdisk /dev/sdc
+   25  sudo fdisk -l /dev/sdb /dev/sdc
+   26  sudo wipefs -a /dev/sdb1 /dev/sdc2
+   27  sudo pvcreate /dev/sdb1 /dev/sdc3
+   28  sudo pvcreate /dev/sdb1 /dev/sdc2
+   29  sudo pvs
+   30  sudo vgcreate vg_datos /dev/sdb1 /dev/sdc2
+   31  sudo vgs
+   32  sudo lvcreate -n lv_docker -L 5M vgd_datos
+   33  sudo lvcreate -n lv_docker -L 5M vg_datos
+   34  sudo lvcreate -n lv_workareas -L 1.5G vg_datos
+   35  sudo lvcreate -n lv_swap -L 512M vg_datos
+   36  sudo lvs
+   37  mkfs.ext4 /dev/vg_datos/lv_docker
+   38  sudo mkfs.ext4 /dev/vg_datos/lv_docker
+   39  sudo mkfs.ext4 /dev/vg_datos/lv_workareas
+   40  sudo mkswap /dev/vg_datos/lv_swap
+   41  sudo mkdir -p /var/lib/docker
+   42  sudo mkdir -p /work
+   43  sudo mount /dev/vg_datos/lv_docker /var/lib/docker
+   44  sudo mount /dev/vg_datos/lv_workareas /work
+   45  sudo swapon /dev/vg_datos/lv_swap
+   46  df -h
+   47  free -h
+   48  swapon --show
+   49  nano ~/RTA_Examen_$(date +%Y%m%d)/Punto_A.sh
+   50  chmod +x ~/RTA_Examen_$(date +%Y%m%d)/Punto_A.sh
+   51  history
+   52  51
+   53  history > ~/RTA_Examen_$(date +%Y%m%d)/historial_comandos.txt
